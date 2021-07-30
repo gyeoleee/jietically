@@ -17,10 +17,8 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/js/**" location="/resources/js/" />
-	<resources mapping="/js/help/**" location="/resources/js/help/" />
 	<resources mapping="/css/**" location="/resources/css/" />
 	<resources mapping="/images/**" location="/resources/images/" />
-	<resources mapping="/upload/**" location="/resources/upload/"/>
 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -28,42 +26,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.drdr.dn" />
+	<context:component-scan base-package="com.semi.shmn" />
 	
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>	
-	
-	<interceptors>
-		<interceptor>
-		<mapping path="/member/**"/>
-		<mapping path="/community/**"/>
-		<mapping path="/charge/**"/>
-		<mapping path="/cs/**"/>
-		<mapping path="/help/**"/>
-		
-		<exclude-mapping path="/member/enroll"/>
-	  	<exclude-mapping path="/member/idCheck"/>
-	  	<exclude-mapping path="/member/login"/>	  	
-	  	<exclude-mapping path="/member/popup"/>
-	  	<exclude-mapping path="/member/terms"/>
-	  	<exclude-mapping path="/member/find"/>
-	  	<exclude-mapping path="/member/findPerson"/>
-	  	<exclude-mapping path="/member/findPersonId"/>
-	  	<exclude-mapping path="/member/nickCheck"/>
-	  	<exclude-mapping path="/mail/send"/>
-	  	<exclude-mapping path="/community/commlist"/>
-	  	<exclude-mapping path="/charge"/>
-	  	<exclude-mapping path="/cs/nboardlist"/>
-	  	<exclude-mapping path="/cs/nmain"/>
-	  	<exclude-mapping path="/cs/nfaqlist"/>
-	  	<exclude-mapping path="/cs/nfaq1list"/>
-	  	<exclude-mapping path="/cs/nfaq2list"/>
-	  	<exclude-mapping path="/cs/nfaq3list"/>
-	  	<exclude-mapping path="/cs/nfaq4list"/>
-	  	<exclude-mapping path="/cs/nfaqview"/>
-	  	<exclude-mapping path="/cs/nboardview"/>
-	  	<exclude-mapping path="/help/list"/>
-	  	
-	  	<beans:bean id="loginCheckInterceptor" class="com.drdr.dn.common.interceptor.LoginCheckInterceptor"/>
-		</interceptor>
-	</interceptors>
 </beans:beans>

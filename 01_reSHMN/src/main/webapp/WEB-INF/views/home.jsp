@@ -5,7 +5,10 @@
 	<title>Home</title>
 </head>
 <body>
-<H1> jietically </H1>
-fffffffffffffffffffffff
+<h1>
+	RE : Semi Sae Ha Ma No
+</h1>
+
+<P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>
